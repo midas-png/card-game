@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    background-color: #ffb7c5;
+}
+
+.card-game{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.card.flip{
+    transform: rotateY(180deg);
+}
+
+.hiddenCard,
+.openCard{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.hiddenCard{
+    transform: rotateY(180deg);
+}
+
+.btnContainer{
+    height: 15vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.spanContainer{
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.btn{
+    height: 50%;
+    width: 10%;
+    border-radius: 1rem;
+    background-color: #fddbe2;
+    border-color: #f89bad;
+    outline: none;
+}
+
+.btn, span, div{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
